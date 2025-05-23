@@ -17,6 +17,7 @@ type Props = {
 
 export default async function Page({ params, searchParams }: Props) {
   // return <div>{JSON.stringify(props)}</div>;
+  const { slug } = params;
   const data = await getNewsDetail(params.slug, {
     draftKey: searchParams.dk,
   }).catch(notFound);
